@@ -22,3 +22,29 @@ Note:
 1 is typically treated as an ugly number.
 Input is within the 32-bit signed integer range: [−231,  231 − 1].
 
+class Solution {
+    public boolean isUgly(int num) {
+        if(num<1){
+            return false;
+        }
+        //if number can be divided by 2 divide it by 2
+        while(num%2==0){
+            num/=2;
+            System.out.println("2: "+num);
+        }
+        //if number can be divided by 3 divide it by 3
+        while(num%3==0){
+            num/=3;
+            System.out.println("3: "+num);
+        }
+        //if number can be divided by 5 divide it by 5
+        while(num%5==0){
+            num/=5;
+            System.out.println("5: "+num);
+        }
+        //if at the end we have 1 than number is ugly as it was divided by only prime numbers 2,3,5
+        return num==1;
+    }
+
+}
+

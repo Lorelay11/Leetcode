@@ -21,11 +21,13 @@ class Solution {
             while(i>=0 || j>=0){
                 int sum = carry;
                 if(i>=0){
-                    sum+=a.charAt(i--)-'0';
+                    //-'0' it is tric to convert char to integer
+                    sum+=a.charAt(i)-'0';
+                    i--;
                 }
                 if (j >= 0) {
-                    sum+=b.charAt(j--) - '0';
-
+                    sum+=b.charAt(j) -'0';
+                    j--;
                 }
                 sb.insert(0,sum%2);
                 carry=sum/2;
@@ -37,6 +39,7 @@ class Solution {
             return sb.toString();
             }
 }    
+
 
 
 
